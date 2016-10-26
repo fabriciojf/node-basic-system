@@ -1,6 +1,6 @@
 # Node.js Basic System
 
-Proposta de um projeto base desenvolvido com Node.js e Pug. Este modelo é um estudo pessoal que contempla aplicação de conveções e style guides, além de uma visão pessoal dos serguintes aspectos:
+Proposta de um projeto base desenvolvido com Node.js e Pug. Este modelo é um estudo pessoal que contempla aplicação de conveções e style guides, além de uma visão pessoal dos seguintes aspectos:
 
   - Organização de pastas
   - Nomenclatura de arquivos
@@ -28,7 +28,7 @@ Clone o projeto
 
 ```console
 $ git clone https://github.com/fabriciojf/node-basic-system.git
-$ cd nodechat
+$ cd node-basic-system
 ```
 
 Instale os pacotes npm
@@ -43,9 +43,11 @@ Execute o projeto
 $ nodemon server.js
 ```
 
-Abra-o no navegador, para configurar uma porta diferente acesse o arquivo app/config/default-config.js
+Abra-o no navegador.  
 
-  - [http://localhost:3000/](http://localhost:3000)   
+  - [http://localhost:3000/](http://localhost:3000)
+
+Para configurar uma porta diferente acesse o arquivo  [app/config/default-config.js](https://github.com/fabriciojf/node-basic-system/blob/master/app/config/default-config.js)  
 
 ### Style Guide
 
