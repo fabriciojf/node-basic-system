@@ -1,0 +1,17 @@
+footer(class='page-footer light-blue darken-4')#footer
+  div(class='container')
+    div(class='row')
+      div(class='col l6 s12')
+
+  div(class='footer-copyright center')  
+    div(class='container') &copy; Fabr&iacute;cio Costa 2016 -&nbsp;
+      a(
+        class='white-text',
+        href='http://fabriciojf.com') fabriciojf.com
+
+  script(src='https://code.jquery.com/jquery-2.1.1.min.js')
+  script(src='/javascript/materialize.min.js')
+
+  if message
+    script(type='text/javascript').
+      window.onload = Materialize.toast('#{message}', 3000, 'rounded');

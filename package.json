@@ -1,0 +1,28 @@
+{
+  "name": "nodejs-basic-system",
+  "version": "1.0.0",
+  "description": "Node.js Basic System",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabriciojf/node-basic-system.git"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "jsonwebtoken": "^7.1.9",
+    "mongoose": "^4.6.5",
+    "pug": "^2.0.0-beta6"
+  },
+  "keywords": [
+    "chat",
+    "nodejs"
+  ],
+  "author": "Fabricio Costa <fabriciojf@gmail.com>",
+  "license": "ISC",
+  "homepage": "https://github.com/fabriciojf/node-basic-system"
+}

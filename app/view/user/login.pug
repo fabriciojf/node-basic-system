@@ -1,0 +1,40 @@
+extends ../../public/default.pug
+
+block title
+  title Home - Bem-vindo
+
+block content
+  h1 Login  
+  div(class='row')
+    form(
+      method='post',
+      action='/admin/auth'
+    )
+      div(class='row')
+        div(class='input-field col s6')
+          input(
+            id='iemail',
+            name='email',
+            type='text',
+            class='validate',
+            value='fabriciojf@gmail.com'
+          )
+          label(for='iemail') Email
+      div(class='row')
+        div(class='input-field col s6')
+          input(
+            id='ipassword',
+            name='password',
+            type='text',
+            class='validate',
+            value='123'
+          )
+          label(for='ipassword') Password
+
+      div(class='row')
+        div(class='input-field col s6')
+          button(
+            class="btn waves-effect waves-light", 
+            type="submit",
+            name="action"
+          ) Enviar
