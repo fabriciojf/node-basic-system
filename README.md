@@ -40,6 +40,10 @@ $ npm install
 Execute o projeto
 
 ```console
+$ node server.js
+
+ou
+
 $ nodemon server.js
 ```
 
