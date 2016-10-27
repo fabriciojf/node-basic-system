@@ -8,15 +8,6 @@ UserController.prototype = {
     var dao = new userDAO();    
     dao.create(data, callback);    
   },
-
-  setup: function(callback) {
-    var dao = new userDAO();    
-    dao.create({
-      name: 'Fabricio',
-      email: 'fabriciojf@gmail.com',
-      password: '123'
-    }, callback);    
-  }
 }
 
 module.exports = UserController;

@@ -13,21 +13,23 @@ AuthSecurity.prototype = {
 
   // token validation
   validate: function (req, res, next) {
+    console.log('dsdf');
 
-    var token = 'undefined';
     if (req.cookies.xtoken !== 'undefined') {
-      token = req.cookies.xtoken;
+      var token = req.cookies.xtoken;
     }
     
     if (token) {
       jwt.verify(token, appsec, jwtVerifyReturn);
     } else {
-      return res.render('user/login');
+      res.render('user/login');
+      return;
     }
 
     function jwtVerifyReturn(err, decoded) {
       if (err) {
-        return res.render('user/login');
+        res.render('user/login');
+        return;
       }
       next();
     }
@@ -41,13 +43,7 @@ AuthSecurity.prototype = {
     dao.findByEmailAndPass(req.body, userFindOneReturn);
     function userFindOneReturn(err, user) {
       if (err) throw err;
-      if (!user) {
-        res.render('user/login', {
-          success: false,
-          message: 'User not found'
-        });
-      } 
-      else if (user) {
+      if (user) {
 
         // token generated expires in 24h
         var token = jwt.sign(user, appsec, {
@@ -55,33 +51,23 @@ AuthSecurity.prototype = {
         });
 
         res.cookie('xtoken', token);
-        res.render('dashboard', {logged: true});
+        res.render('dashboard', {
+          success: false,
+          message: 'Welcome '+user.name
+        });
+        return;
       }
+      res.render('user/login', {
+        success: false,
+        message: 'Invalid User or Password'
+      });
     };
   },
 
   logoff: function(req, res) {
     res.clearCookie('xtoken');
     res.render('index');
-  },
-
-  isLogged: function(req) {
-    var token = 'undefined';
-    if (req.cookies.xtoken !== 'undefined') {
-      token = req.cookies.xtoken;
-    }
-    
-    if (token) {
-      jwt.verify(token, appsec, jwtVerifyReturn);
-    }
-    return false;
-
-    function jwtVerifyReturn(err, decoded) {
-      if (err) {
-        return false;
-      }
-      return true;
-    }
+    return;
   }
 }
 

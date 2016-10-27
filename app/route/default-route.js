@@ -12,7 +12,7 @@ router.get('/user', gotoUser);
 router.post('/user', gotoUserSave);
 router.get('/user/add', gotoUserAdd);
 router.get('/setup', gotoSetup);
-router.all('*', goto404); // pagina nao existe
+router.all('*', goto404); // page not found
 
 // routes actions
 function gotoBase(req, res) {
