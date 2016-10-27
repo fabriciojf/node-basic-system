@@ -13,8 +13,6 @@ AuthSecurity.prototype = {
 
   // token validation
   validate: function (req, res, next) {
-    console.log('dsdf');
-
     if (req.cookies.xtoken !== 'undefined') {
       var token = req.cookies.xtoken;
     }
