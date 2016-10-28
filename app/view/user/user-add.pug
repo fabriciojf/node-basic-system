@@ -5,43 +5,39 @@ block title
 
 block content
   h2 Cadastro de Usuário  
-  div(class='row')
+  div.row
     form(
       method='post',
       action='/user'
     )
-      div(class='row')
-        div(class='input-field col s6')
-          input(
+      div.row
+        div.input-field.col.s6
+          input.validate(
             id='iname',
             name='name',
-            type='text',
-            class='validate'
+            type='text'
           )
           label(for='iemail') Name
-      div(class='row')
-        div(class='input-field col s6')
-          input(
+      div.row
+        div.input-field.col.s6
+          input.validate(
             id='iemail',
             name='email',
-            type='text',
-            class='validate'
+            type='text'
           )
           label(for='iemail') Email
-      div(class='row')
-        div(class='input-field col s6')
-          input(
+      div.row
+        div.input-field.col.s6
+          input.validate(
             id='ipassword',
             name='password',
-            type='text',
-            class='validate'
+            type='text'
           )
           label(for='ipassword') Password
 
-      div(class='row')
-        div(class='input-field col s6')
-          button(
-            class="btn waves-effect waves-light", 
+      div.row
+        div.input-field.col.s6
+          button.btn.waves-effect.waves-light(
             type="submit",
             name="action"
           ) Cadastrar

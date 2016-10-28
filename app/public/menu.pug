@@ -1,18 +1,9 @@
-div(class='navbar-fixed')
-  nav(
-    class='light-blue darken-4',
-    role='navigation'
-  )
-    div(class='nav-wrapper container')
-      a(
-        href='/',
-        class='brand-logo'
-      ) 
-        i(class='fa fa-home') &nbsp;Node Basic System
-      ul(
-        id='nav-mobile',
-        class='right hide-on-med-and-down'
-      )          
+div.navbar-fixed
+  nav.light-blue.darken-4(role='navigation')
+    div.nav-wrapper.container
+      a.brand-logo(href='/')
+        i.fa.fa-home &nbsp;Node Basic System
+      ul.right.hide-on-med-and-down(id='nav-mobile')
         li
           a(href='/admin') Dashboard
         li(if )
@@ -21,9 +12,8 @@ div(class='navbar-fixed')
           a(href='/admin') Login
         li
           a(href='/admin/logoff') Logoff
-      a(
+      a.button-collapse(
         href='#',
-        data-activates='nav-mobile',
-        class='button-collapse'
+        data-activates='nav-mobile'
       )
-        i(class='material-icons') menu
+        i.material-icons menu
