@@ -6,7 +6,7 @@ var user = require('../model/user-model');
 function UserDAO() {
   this.mongoose = require('mongoose');
   this.mongoose.connect(
-    `mongodb://${config.database.host}/${config.database.db}`);
+    'mongodb://'+config.database.host+'/'+config.database.db);
 }
 UserDAO.prototype = {
 

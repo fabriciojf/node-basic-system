@@ -29,4 +29,4 @@ app.use('/', defaultRoutes);
 
 // server start
 app.listen(port);
-console.log(`Server Running: http://${config.server.host}:${port}`);
+console.log('Server Running: http://'+config.server.host+':'+port);
