@@ -8,7 +8,6 @@ var app = express();
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var adminRoutes = require('./app/route/admin-route');
 var defaultRoutes = require('./app/route/default-route');
 var port = process.env.PORT || config.server.port;
 
@@ -20,11 +19,8 @@ app.use(bodyParser.json());
 
 // view engine
 app.use(express.static(path.join(__dirname, 'app/public')));
-app.set('views', path.join(__dirname, 'app/view'));
-app.set('view engine', 'pug');
 
 // express routes
-app.use('/admin', adminRoutes);
 app.use('/', defaultRoutes);
 
 // server start

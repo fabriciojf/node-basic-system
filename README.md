@@ -1,18 +1,22 @@
 # Node.js Basic System
 
-Proposta de um projeto base desenvolvido com Node.js e Pug. Este modelo é um estudo pessoal que contempla aplicação de conveções e style guides, além de uma visão pessoal dos seguintes aspectos:
+Proposta de um projeto base desenvolvido com Node.js. Este modelo é um estudo pessoal que contempla aplicação de conveções e style guides, além de uma visão pessoal dos seguintes aspectos:
 
   - Organização de pastas
   - Nomenclatura de arquivos
   - Proposta de Modelo DAO
   - Estudo de Classes
-  - Estudo de login por webtoken com registro em Cookie, podendo ser alterado para integração via REST
+  - Estudo de login por webtoken 
+
+TODO 
+ 
   - Estudo de [Materialize.css](http://materializecss.com/)
   - Estudo de templates utilizando [PugJs](https://pugjs.org/api/getting-started.html)
 
 ### Recursos do Projeto
 
-  - Cadastro de usuários  
+  - Cadastro de usuários
+  - Listagem de usuários   
   - Login
   - Logoff  
 
@@ -49,7 +53,7 @@ $ nodemon server.js
 
 Abra-o no navegador.  
 
-  - [http://localhost:3000/](http://localhost:3000)
+  - [http://localhost:3001/](http://localhost:3001)
 
 Para configurar uma porta diferente acesse o arquivo  [app/config/default-config.js](https://github.com/fabriciojf/node-basic-system/blob/master/app/config/default-config.js)  
 

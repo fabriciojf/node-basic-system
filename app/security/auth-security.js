@@ -13,22 +13,25 @@ AuthSecurity.prototype = {
 
   // token validation
   validate: function (req, res, next) {
-    if (req.cookies.xtoken !== 'undefined') {
-      var token = req.cookies.xtoken;
-    }
-    
+    var token = req.headers['x-token'];
+
     if (token) {
       jwt.verify(token, appsec, jwtVerifyReturn);
     } else {
-      res.render('user/login');
-      return;
+      return res.status(403).send({
+            success: false,
+            message: 'No token.'
+      });
     }
 
     function jwtVerifyReturn(err, decoded) {
       if (err) {
-        res.render('user/login');
-        return;
+        return res.json({
+          success: false,
+          error: 'User not registered'
+        });
       }
+      req.decoded = decoded;
       next();
     }
   },
@@ -48,24 +51,14 @@ AuthSecurity.prototype = {
           expiresIn: 1440
         });
 
-        res.cookie('xtoken', token);
-        res.render('dashboard', {
-          success: false,
-          message: 'Welcome '+user.name
+        res.json({
+          success: true,
+          token: token
         });
         return;
-      }
-      res.render('user/login', {
-        success: false,
-        message: 'Invalid User or Password'
-      });
+      } 
+      next();
     };
-  },
-
-  logoff: function(req, res) {
-    res.clearCookie('xtoken');
-    res.render('index');
-    return;
   }
 }
 
