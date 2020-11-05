@@ -15,5 +15,13 @@
           description: 'ok'
       })
   });
+  
+  router.get('/', function (req, res) {
+      console.log(req.body);
+      res.json({
+          result: 'success',
+          description: 'ok'
+      })
+  });
 
   module.exports = router;
